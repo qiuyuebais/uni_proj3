@@ -1,0 +1,23 @@
+{
+  "name": "uni_proj3",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiuyuebais/uni_proj3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qiuyuebais/uni_proj3/issues"
+  },
+  "homepage": "https://github.com/qiuyuebais/uni_proj3#readme",
+  "description": "",
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1"
+  }
+}
