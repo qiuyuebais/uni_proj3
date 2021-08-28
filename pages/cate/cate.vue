@@ -1,7 +1,9 @@
 <template>
   <view>
+   <!-- <my-search :bgcolor="'pink'" radius="3"></my-search> -->
+    <my-search @click="gotoSearch"></my-search>
     <view class="scroll-view-container">
-      <!-- 左侧的滑动区 -->
+      <!-- 左侧的滑动区 --> 
       <scroll-view class="left-scroll-view"  scroll-y :style="{height: wh + 'px'}">
       <block v-for="(item,i) in cateList" :key="i">
         <view  @click="activeChange(i)" :class="['left-scroll-view-item', i===active?'active':'']">{{item.cat_name}}
@@ -9,7 +11,7 @@
       </block >
       </scroll-view>
        <!-- 右侧的滑动区 -->
-       <scroll-view scroll-y style="{height: 300px;}" :scroll-top="scrollTop">
+       <scroll-view scroll-y :style="{height: wh + 'px'}" :scroll-top="scrollTop">
          <view class="cate-lv2" v-for="(item,i2) in cateLevel2" :key="i2">
            <view class="cate-lv2-title">
              /{{item.cat_name}}/
@@ -40,7 +42,7 @@
     },
     onLoad() {
       const sysInfo=uni.getSystemInfoSync()
-      this.wh=sysInfo.windowHeight
+      this.wh=sysInfo.windowHeight-50
       this.getCateList()
       },
     methods:{
@@ -63,7 +65,13 @@
          uni.navigateTo({
            url: '/subpkg/goods_list/goods_list?cid=' + item3.cat_id
          })
+       },
+       gotoSearch(){
+       uni.navigateTo({
+         url:'/subpkg/search/search'
+       })
        }
+       
        
     },    
   }
