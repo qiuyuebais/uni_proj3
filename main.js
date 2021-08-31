@@ -2,7 +2,8 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
-
+// 1. 导入 store 的实例对象
+import store from './store/store.js'
 // 按需导入 $http 对象
 import { $http } from '@escook/request-miniprogram'
 // 在 uni-app 项目中，可以把 $http 挂载到 uni 顶级对象之上，方便全局调用
@@ -35,7 +36,8 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 
 const app = new Vue({
-    ...App
+    ...App,
+        store
 })
 app.$mount()
 // #endif
@@ -46,7 +48,7 @@ import App from './App.vue'
 export function createApp() {
   const app = createSSRApp(App)
   return {
-    app
+    app,
   }
 }
 // #endif
